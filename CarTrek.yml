@@ -1,6 +1,6 @@
 openapi: '3.0.2'
 info:
-  title: Integration API Cartrek
+  title: Integration API CarTrek
   version: '1.0'
 servers:
   - url: https://support2.build.cartrek.online
