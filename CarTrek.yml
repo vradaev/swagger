@@ -1,0 +1,84 @@
+openapi: '3.0.2'
+info:
+  title: Integration API Cartrek
+  version: '1.0'
+servers:
+  - url: https://support2.build.cartrek.online
+components:
+  securitySchemes:
+    Cartrek-ApiKey:
+      type: apiKey
+      in: query
+      name: apikey
+paths:
+  /api/integration/setRateRatio:
+     post:
+      tags:
+      - "RateRatio"
+      summary: "set rate ratio"
+      description: "test"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                  example: "e7b039f4-8584-485d-b7d7-acc9013933af"
+                carId:
+                  type: string
+                  example: "9ba06c0c-8a14-4070-9c7b-ac3100c78225"
+                parkMultiplier:
+                  type: number
+                  format: double
+                driveMultiplier:
+                  type: number
+                  format: double
+                ratePackMultiplier:
+                  type: number
+                  format: double
+                overrunMultiplier:
+                  type: number
+                  format: double
+                operation:
+                  type: string
+                  example: "Multiply"
+      security:
+      - Cartrek-ApiKey: []
+      responses:
+        '200':
+          description: OK
+  /api/integration/rateRatio:
+    delete:
+      tags:
+      - "RateRatio"
+      summary: "delete rate ratio"
+      description: "test"
+      parameters:
+        - name: userId
+          in: query
+          description: user id.
+          required: true
+          schema:
+            type: string
+            example: "e7b039f4-8584-485d-b7d7-acc9013933af"
+        - name: carId
+          in: query
+          description: user id.
+          required: true
+          schema:
+            type: string
+            example: "9ba06c0c-8a14-4070-9c7b-ac3100c78225"
+      security:
+      - Cartrek-ApiKey: []
+      responses:
+        '200':
+          description: OK
+      
+            
+
+            
+
+
